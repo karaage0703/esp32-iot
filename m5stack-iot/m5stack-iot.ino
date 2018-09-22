@@ -38,6 +38,10 @@ void setup_wifi(){
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
+  // For WiFi Error
+  WiFi.disconnect(true);
+  delay(1000);
+
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
